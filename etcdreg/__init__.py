@@ -51,7 +51,7 @@ def main(argv):
     s.connect('/var/run/docker.sock')
     s.sendall("GET /containers/"+settings['hostname']+"/json HTTP/1.0\r\n\r\n")
 #    s.sendall("GET /containers/54d4297572a9/json HTTP/1.0\r\n\r\n")
-    response = s.recv(4096)
+    response = s.recv(32768)
     s.close()
     (headers, js) = response.split("\r\n\r\n")
     data = json.loads(js)
