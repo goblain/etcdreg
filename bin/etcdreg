@@ -1,6 +1,6 @@
 #!/bin/python
 
-import etcdreg
+import sys, etcdreg
 
 if __name__ == "__main__":
    etcdreg.main(sys.argv[1:])
